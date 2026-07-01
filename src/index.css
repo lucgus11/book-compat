@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-cream text-ink font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer components {
+  .tag-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-clay-50 text-clay-700 text-sm px-3 py-1.5 border border-clay-100;
+  }
+  .btn-primary {
+    @apply bg-clay-500 hover:bg-clay-600 active:scale-[0.98] text-cream font-medium rounded-xl2 px-5 py-3 transition-all shadow-card disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-paper active:scale-[0.98] text-ink font-medium rounded-xl2 px-5 py-3 transition-all border border-ink/10;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-ink/10 bg-white px-4 py-3 text-ink placeholder:text-ink/35 focus:outline-none focus:ring-2 focus:ring-clay-300 transition-shadow;
+  }
+  .card {
+    @apply bg-white rounded-xl2 shadow-card border border-ink/5;
+  }
+}
